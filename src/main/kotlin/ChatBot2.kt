@@ -30,5 +30,18 @@ fun main(args: Array<String>) {
             println("Done!")
         }
     }
+    //4 задание
+    println("Let's test your programming knowledge.\n" + "What values are stored in the boolean data type?")
+    println("1.true or false\n2.1/0\n3.yes/no\n4.I don't know");
+    while (true) {
+        val user_answer = scan.nextInt()
+        if (user_answer == 1) {
+            println("Completed! You are smart:)")
+            break;
+        } else {
+            println("Please, try again!")
+        }
+    }
+    println("Congratulations, have a nice day!")
 
 }
