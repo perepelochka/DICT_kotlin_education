@@ -19,6 +19,16 @@ fun main(args: Array<String>) {
     val age = remainder3 * 70 + remainder5 * 21 + remainder7 * 15 % 105
     println("Your age is $age!")
 
+    //3 задание
+    println("Now I will prove to you that I can count to any number you want.")
+    val number: Int = scan.nextInt()
+    for (i in 0 until number + 1) {
+        println("$i!")
+        if (i == number) {
+            println("Done!")
+        }
+    }
+
 
 }
 
