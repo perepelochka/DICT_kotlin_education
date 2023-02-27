@@ -124,8 +124,26 @@ fun countVowels(str: String): Int {
     }
     return count
 }
-fun main() {
-    val str ="Good day!"
-    val vowelsCount = countVowels(str)
-    println("Количество гласных букв в строке '$str' равно $vowelsCount.")
+//fun main() {
+//    val str ="Good day!"
+//    val vowelsCount = countVowels(str)
+//    println("Количество гласных букв в строке '$str' равно $vowelsCount.")
+//}
+//функция, возвращающая средний символ
+fun findMiddleChar(str: String): String {
+    val middleIndex = str.length / 2
+    if (str.length % 2 == 0) {
+        return str.substring(middleIndex - 1, middleIndex + 1)
+    } else {
+        return str.substring(middleIndex, middleIndex + 1)
+    }
+}
+fun main(){
+    val str1 = "test"
+    val str2 = "A"
+    val str3= "Fun"
+    println("Средний символ в строке '$str1' равен '${findMiddleChar(str1)}'.")
+    println("Средние символы в строке '$str2' равны '${findMiddleChar(str2)}'.")
+    println("Средние символы в строке '$str3' равны '${findMiddleChar(str3)}'.")
+
 }
