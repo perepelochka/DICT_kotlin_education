@@ -37,11 +37,11 @@
     //}
 //}
 
-fun main() {
-    val numbers = intArrayOf(13, 75, 90, 0, 87)
-    val largestNumbers = findTwoLargestNumbers(numbers)
-    println("Наибольшие числа: ${largestNumbers.first} и ${largestNumbers.second}")
-}
+//fun main() {
+ //   val numbers = intArrayOf(13, 75, 90, 0, 87)
+  //  val largestNumbers = findTwoLargestNumbers(numbers)
+   // println("Наибольшие числа: ${largestNumbers.first} и ${largestNumbers.second}")
+//}
 
 // Функция, возвращающая "Even" или "Odd"
 fun evenOrOdd(number: Int): String {
@@ -88,4 +88,27 @@ fun findTwoLargestNumbers(numbers: IntArray): Pair<Int, Int> {
         }
     }
     return Pair(firstLargest, secondLargest)
+}
+
+fun countPositiveAndSumNegative(numbers: Array<Int>?): Array<Int> {
+    if (numbers == null || numbers.isEmpty()) {
+        return arrayOf(0, 0)
+    }
+    var positiveCount = 0
+    var negativeSum = 0
+    for (number in numbers) {
+        if (number > 0) {
+            positiveCount++
+        } else if (number < 0) {
+            negativeSum += number
+        }
+    }
+    return arrayOf(positiveCount, negativeSum)
+}
+
+fun main() {
+    val arr = arrayOf(-2, 5, 20, -8, 3, -1)
+    val result = countPositiveAndSumNegative(arr)
+    println("Количество положительных чисел: ${result[0]}")
+    println("Сумма отрицательных чисел: ${result[1]}")
 }
