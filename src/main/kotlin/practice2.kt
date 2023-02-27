@@ -66,7 +66,7 @@ fun negateNumber(number: Int): Int {
 fun calculateCentury(Year: Int): Int {
     return (Year + 99) / 100
 }
-
+// Функция, которая находит самое маленькое число
 fun findSmallestNumber(numbers: Array<Int>): Int {
     var smallestNumber = numbers[0]
     for (number in numbers) {
@@ -76,6 +76,7 @@ fun findSmallestNumber(numbers: Array<Int>): Int {
     }
     return smallestNumber
 }
+// Функция, которая находит 2 самых больших числа
 fun findTwoLargestNumbers(numbers: IntArray): Pair<Int, Int> {
     var firstLargest = Int.MIN_VALUE
     var secondLargest = Int.MIN_VALUE
@@ -89,7 +90,7 @@ fun findTwoLargestNumbers(numbers: IntArray): Pair<Int, Int> {
     }
     return Pair(firstLargest, secondLargest)
 }
-
+// Функция, которая находит кол-во положительных и сумму отриц. чисел
 fun countPositiveAndSumNegative(numbers: Array<Int>?): Array<Int> {
     if (numbers == null || numbers.isEmpty()) {
         return arrayOf(0, 0)
@@ -106,9 +107,25 @@ fun countPositiveAndSumNegative(numbers: Array<Int>?): Array<Int> {
     return arrayOf(positiveCount, negativeSum)
 }
 
+//fun main() {
+//    val arr = arrayOf(-2, 5, 20, -8, 3, -1)
+//    val result = countPositiveAndSumNegative(arr)
+//    println("Количество положительных чисел: ${result[0]}")
+//    println("Сумма отрицательных чисел: ${result[1]}")
+//}
+//функция, которая считает кол-во гласных букв в строке
+fun countVowels(str: String): Int {
+    val vowels ="AEIOUYaeiouy"
+    var count = 0
+    for (char in str) {
+        if (char in vowels) {
+            count++
+        }
+    }
+    return count
+}
 fun main() {
-    val arr = arrayOf(-2, 5, 20, -8, 3, -1)
-    val result = countPositiveAndSumNegative(arr)
-    println("Количество положительных чисел: ${result[0]}")
-    println("Сумма отрицательных чисел: ${result[1]}")
+    val str ="Good day!"
+    val vowelsCount = countVowels(str)
+    println("Количество гласных букв в строке '$str' равно $vowelsCount.")
 }
