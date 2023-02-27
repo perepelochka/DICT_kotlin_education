@@ -2,14 +2,22 @@
 // Основная функция программы
 fun main() {
     // Вводим целое число
-    print("Введите год: ")
-    val Year = readLine()?.toIntOrNull()
+    //print("Введите год: ")
+    //val Year = readLine()?.toIntOrNull()
    // val number = readLine()?.toIntOrNull()
-
-    // Проверяем, что ввод был корректным числом
-    if (Year == null) {
-        println("Ошибка: введено некорректное значение")
+    print("Введите числа через пробел: ")
+    val input = readLine()
+    val numbers = input?.split(" ")?.map { it.toInt() }?.toTypedArray()
+    if (numbers != null) {
+        val smallestNumber = findSmallestNumber(numbers)
+        println("Наименьшее число: $smallestNumber")
     } else {
+        println("Вы не ввели числа")
+    }
+    // Проверяем, что ввод был корректным числом
+        //if (Year == null) {
+    //    println("Ошибка: введено некорректное значение")
+    //} else {
        //  Вызываем функцию, возвращающую "Even для четных чисел" или "Odd для нечетных чисел"
     //    val result = evenOrOdd(number)
        //  Выводим результат
@@ -23,10 +31,10 @@ fun main() {
         // Выводим результат
      //   println("Задание 3: $result3")
         // Вызываем функцию, определяющую столетие согласно году
-        val result4 = calculateCentury(Year)
+    //    val result4 = calculateCentury(Year)
         // Выводим результат
-        println("Задание 4: $result4")
-    }
+    //    println("Задание 4: $result4")
+    //}
 }
 
 // Функция, возвращающая "Even" или "Odd"
@@ -53,3 +61,12 @@ fun calculateCentury(Year: Int): Int {
     return (Year + 99) / 100
 }
 
+fun findSmallestNumber(numbers: Array<Int>): Int {
+    var smallestNumber = numbers[0]
+    for (number in numbers) {
+        if (number < smallestNumber) {
+            smallestNumber = number
+        }
+    }
+    return smallestNumber
+}
