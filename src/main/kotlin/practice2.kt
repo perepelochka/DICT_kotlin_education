@@ -1,19 +1,19 @@
 
 // Основная функция программы
-fun main() {
+//fun main() {
     // Вводим целое число
     //print("Введите год: ")
     //val Year = readLine()?.toIntOrNull()
    // val number = readLine()?.toIntOrNull()
-    print("Введите числа через пробел: ")
-    val input = readLine()
-    val numbers = input?.split(" ")?.map { it.toInt() }?.toTypedArray()
-    if (numbers != null) {
-        val smallestNumber = findSmallestNumber(numbers)
-        println("Наименьшее число: $smallestNumber")
-    } else {
-        println("Вы не ввели числа")
-    }
+    //print("Введите числа через пробел: ")
+    //val input = readLine()
+    //val numbers = input?.split(" ")?.map { it.toInt() }?.toTypedArray()
+    //if (numbers != null) {
+    //    val smallestNumber = findSmallestNumber(numbers)
+    //    println("Наименьшее число: $smallestNumber")
+    //} else {
+    //    println("Вы не ввели числа")
+    //}
     // Проверяем, что ввод был корректным числом
         //if (Year == null) {
     //    println("Ошибка: введено некорректное значение")
@@ -35,6 +35,12 @@ fun main() {
         // Выводим результат
     //    println("Задание 4: $result4")
     //}
+//}
+
+fun main() {
+    val numbers = intArrayOf(13, 75, 90, 0, 87)
+    val largestNumbers = findTwoLargestNumbers(numbers)
+    println("Наибольшие числа: ${largestNumbers.first} и ${largestNumbers.second}")
 }
 
 // Функция, возвращающая "Even" или "Odd"
@@ -69,4 +75,17 @@ fun findSmallestNumber(numbers: Array<Int>): Int {
         }
     }
     return smallestNumber
+}
+fun findTwoLargestNumbers(numbers: IntArray): Pair<Int, Int> {
+    var firstLargest = Int.MIN_VALUE
+    var secondLargest = Int.MIN_VALUE
+    for (number in numbers) {
+        if (number > firstLargest) {
+            secondLargest = firstLargest
+            firstLargest = number
+        } else if (number > secondLargest) {
+            secondLargest = number
+        }
+    }
+    return Pair(firstLargest, secondLargest)
 }
